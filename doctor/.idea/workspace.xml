@@ -2,39 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81c5c292-b0fa-44a6-9193-3fb7807e8259" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/choose.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/css/bootstrap-datetimepicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/css/bootstrap-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/css/bootstrap-theme.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/css/bootstrap-theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/css/bootstrap-theme.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/img/.idea/img.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/img/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/img/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/img/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jquery/jquery-3.4.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/js/bootstrap-datetimepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/js/bootstrap-datetimepicker.zh-CN.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/js/npm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/registIndex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ss.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/doctor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +20,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\idea\doctor\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1XFKhRRkc0OLZgUm4ppYzCFwT08" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -64,6 +40,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -84,22 +64,42 @@
       <workItem from="1580987000395" duration="96000" />
       <workItem from="1581077146970" duration="5944000" />
       <workItem from="1581149086929" duration="2344000" />
-      <workItem from="1582097751671" duration="239000" />
+      <workItem from="1582097751671" duration="634000" />
     </task>
+    <task id="LOCAL-00001" summary="DoctorDemo">
+      <created>1582098081085</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582098081085</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="DoctorDemo" />
+    <option name="LAST_COMMIT_MESSAGE" value="DoctorDemo" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1582097924266">
+    <state x="1040" y="104" key="CommitChangelistDialog2" timestamp="1582098079715">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582097924266" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1582097850248">
+    <state x="1040" y="104" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582098079715" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1582098382549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582097850248" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582098382549" />
+    <state x="880" y="98" key="SettingsEditor" timestamp="1582098388606">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="880" y="98" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582098388606" />
+    <state x="1060" y="293" key="Vcs.Push.Dialog.v2" timestamp="1582098258043">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1060" y="293" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582098258043" />
     <state x="334" y="244" key="new project wizard" timestamp="1580987050028">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
