@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>医生排班</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .breadcrumb {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+<!--页头-->
+<div class="container">
+    <div class="page-header" style="font-size: xx-large">
+        <h2 style="color: #27ada5">医生排班</h2>
+    </div>
+</div>
+<!--日期选项-->
+<div class="container">
+    <div>
+        <ul class="nav nav-tabs " role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                      data-toggle="tab">固定日期</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">非固定日期</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <td>Mon</td>
+                        <td>Tue</td>
+                        <td>Wed</td>
+                        <td>Thu</td>
+                        <td>Fri</td>
+                        <td>Sat</td>
+                        <td>Sun</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs">
+                                上午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs">
+                                上午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs">
+                                上午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs">
+                                上午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs">
+                                上午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs">
+                                上午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-xs">
+                                上午
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs">
+                                下午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs">
+                                下午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs">
+                                下午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs">
+                                下午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs">
+                                下午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs">
+                                下午
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-xs">
+                                下午
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!--非固定日期-->
+
+            <div role="tabpanel" class="tab-pane" id="profile">
+                <div class="row pre-scrollable">
+                    <div class="container">
+                        <input class="btn btn-success" type="button" value="一月">
+                        <input class="btn btn-warning" type="button" value="二月">
+                        <input class="btn btn-success" type="button" value="三月">
+                        <input class="btn btn-warning" type="button" value="四月">
+                        <input class="btn btn-success" type="button" value="五月">
+                        <input class="btn btn-warning" type="button" value="六月">
+                        <input class="btn btn-success" type="button" value="七月">
+                        <input class="btn btn-warning" type="button" value="八月">
+                        <input class="btn btn-success" type="button" value="九月">
+                        <input class="btn btn-warning" type="button" value="十月">
+                        <input class="btn btn-success" type="button" value="十一月">
+                        <input class="btn btn-warning" type="button" value="十二月">
+                        <table class="table table-hover">
+
+                            <tbody></tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--线-->
+<div class="container">
+    <hr/>
+</div>
+<!--搜索框-->
+<div class="container">
+    <div class="input-group col-md-12" style="margin-top:0px ;positon:relative">
+
+        <input type="text" class="form-control focus" placeholder="请输入医生姓名">
+
+        <span class="input-group-btn">
+
+               <button class="btn btn-info btn-search">查找</button>
+
+
+            </span>
+    </div>
+</div>
+<!--线-->
+<div class="container">
+    <hr/>
+</div>
+<!--医生选项-->
+<div class="container ">
+    <div class="row pre-scrollable">
+        <div class="container">
+            <table class="table table-striped ">
+                <tbody>
+                <tr>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label>
+                    </td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                    <td>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"><a
+                                style="font-size: larger;color: black">张三</a>
+                        </label></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <hr/>
+</div>
+<!--按钮-->
+<div class="container">
+    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="AlertSub()">
+        提交
+    </button>
+</div>
+</body>
+<script src="jquery/jquery-3.4.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    function AlertSub() {
+        var x;
+        var r = confirm("是否提交？");
+        if (r == true) {
+            x = "确认提交";
+        } else {
+            x = "取消提交";
+        }
+        document.getElementById("button");
+    }
+
+    $(function () {
+        $('.btn btn-success ').click(function () {
+            var month = $('.btn btn-success').innerHTML()
+            if (month == 1 ||month == 3||month == 5 ||month == 7 ||month == 8 ||month == 10 ||month == 12) {
+                $(' <tr style="background-color: #b6bfff">\n' +
+                    '                                <td>1</td>\n' +
+                    '                                <td>2</td>\n' +
+                    '                                <td>3</td>\n' +
+                    '                                <td>4</td>\n' +
+                    '                                <td>5</td>\n' +
+                    '                                <td>6</td>\n' +
+                    '                                <td>7</td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr style="background-color: #b6bfff">\n' +
+                    '                                <td>8</td>\n' +
+                    '                                <td>9</td>\n' +
+                    '                                <td>10</td>\n' +
+                    '                                <td>11</td>\n' +
+                    '                                <td>12</td>\n' +
+                    '                                <td>13</td>\n' +
+                    '                                <td>14</td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr style="background-color: #b6bfff">\n' +
+                    '                                <td>13</td>\n' +
+                    '                                <td>14</td>\n' +
+                    '                                <td>15</td>\n' +
+                    '                                <td>16</td>\n' +
+                    '                                <td>17</td>\n' +
+                    '                                <td>18</td>\n' +
+                    '                                <td>19</td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr style="background-color: #b6bfff">\n' +
+                    '                                <td>20</td>\n' +
+                    '                                <td>21</td>\n' +
+                    '                                <td>22</td>\n' +
+                    '                                <td>23</td>\n' +
+                    '                                <td>24</td>\n' +
+                    '                                <td>25</td>\n' +
+                    '                                <td>26</td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr style="background-color: #b6bfff">\n' +
+                    '                                <td>27</td>\n' +
+                    '                                <td>28</td>\n' +
+                    '                                <td>29</td>\n' +
+                    '                                <td>30</td>\n' +
+                    '                                <td>31</td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-default btn-xs">\n' +
+                    '                                        上午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                            </tr>\n' +
+                    '                            <tr>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                                <td>\n' +
+                    '                                    <button type="button" class="btn btn-info btn-xs">\n' +
+                    '                                        下午\n' +
+                    '                                    </button>\n' +
+                    '                                </td>\n' +
+                    '                            </tr>').appendTo('tbody')
+            }
+        })
+
+    })
+</script>
+</html>
