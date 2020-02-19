@@ -1,0 +1,72 @@
+Spring框架
+1.创建实体类
+2.创建配置类
+3.添加注释
+4.创建容器
+5.获取bean对象
+6.调用bean方法
+7.进行测试
+核心概念： IoC 控制反转
+         DI 依赖注入
+         AoP 面向切面编程
+Spring组成：Core容器
+                1.beans 创建对象的工厂
+                2.core Ioc和DI
+                3.context 实现Ioc容器，Spring容器
+                4.Spel Spring表达式
+           Data Access 数据库操作
+                1.jdbc
+                2.hibernate
+                3.Mybatis
+           Web 包括SpringMvc
+           Test 自动化测试
+           装配bean——>1.自动装配！！！主流！！！
+                     2.在java中显示装配
+                     3.在xml中显示装配
+           通过创建配置类进行依赖的解耦
+
+           在pom文件中导入junit测试单元然后在test文件夹中进行测试！！！包的名字要相同！！！
+
+           通过spring框架中自带的测试功能进行测试
+           <dependency>
+                       <groupId>junit</groupId>
+                       <artifactId>junit</artifactId>
+                       <version>4.13</version>
+                   </dependency>
+           <dependency>
+                       <groupId>org.springframework</groupId>
+                       <artifactId>spring-test</artifactId>
+                       <version>4.3.26.RELEASE</version>
+           </dependency>
+           在测试类中创建成员变量通过autowird初始化
+           创建测试类，调用成员变量的方法进行测试
+
+           autowired 使用场景 1.set方法前
+                             2.成员变量前
+                             3.required关键字 设置为false 时需要用if进行判断
+                               是否为空
+spring 用接口进行开发 1.定义接口
+                    2.创建接口的实现类
+                    3.创建实现类的配置类
+                    4.创建测试类进行测试
+
+                    自动装配通过给实体类加入component进行自动装配
+                    注意产生歧义 1个接口下有多个实现类就没有办法区分装配哪一个实现类
+                    解决方案 1.使用首选bean @primary 只能设置一个不推荐
+                            2.使用限定符  @Qualifier("name") 1.在实现类中加入依赖
+                                                           2.在测试类中autowire下面加入依赖
+                                                           两个依赖name要相同
+                            3.在实现类component后面加入id，测试类用 @Qualifier("id")
+                            4.使用resource注解同时替代autowire和qualifier进行自动装配和解决歧义问题
+
+                            web程序基本结构：浏览器--->web层controller(调用service层)--->业务层(调用持久层)--->dao层(访问数据库)
+ componentscan配置基础包 1.依赖后面@ComponentScan("name")
+                        2.@ComponentScan(basePackages = {"p1","p2","p3"})
+                        3.@ComponentScan(basePackagesclasses = {"p1.class","p2.class","p3.class"})
+
+ javaconfig装配，用于第三方代码或jar包的装配
+                    @Bean
+                       public user print(){
+                           System.out.println("配置类加载");
+                           return new useUser();
+                       }    返回一个new 实体类
